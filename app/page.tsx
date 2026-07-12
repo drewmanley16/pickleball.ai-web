@@ -144,7 +144,6 @@ function ScrollStory() {
       </div>
 
       <div className="scroll-story-copy">
-        <p className="eyebrow">The actual app</p>
         <div className="story-progress"><strong>{active + 1}</strong><span>/ 3</span><div>{stories.map((_,index)=><i key={index} className={index<=active?"filled":""}/>)}</div></div>
         <div className="story-copy-swap" key={active}>
           <span>{active === 0 ? "HOME" : active === 1 ? "WORKOUT" : "PROFILE"}</span>
@@ -168,13 +167,10 @@ export default function Home() {
         <nav className="nav"><a className="wordmark" href="#top">pickleball<span>.ai</span></a><a className="nav-cta" href="#join">Join the beta <span>↗</span></a></nav>
         <div className="hero-lines" aria-hidden="true"><i /><i /><i /></div>
         <div className="hero-content">
-          <p className="eyebrow hero-eyebrow">The social logbook for pickleball</p>
           <h1><span>Every match</span><span>has a <em>story.</em></span></h1>
           <p className="hero-copy">Log the score. Tag your crew. Track the rivalries that keep you coming back.</p>
           <WaitlistForm />
-          <p className="form-note">Private beta for iPhone · No spam, ever</p>
         </div>
-        <a className="scroll-cue" href="#ticker"><span>Scroll to rally</span><b>↓</b></a>
       </section>
 
       <section className="ticker" id="ticker" aria-label="Match activity">
@@ -184,7 +180,6 @@ export default function Home() {
       </section>
 
       <section className="manifesto">
-        <p className="eyebrow" data-reveal>The group chat, upgraded.</p>
         <h2 data-reveal>Pickleball is better<br />when it&apos;s <em>personal.</em></h2>
         <div className="manifesto-grid"><p data-reveal>Not another stat sheet. A living record of the people, places, wins, and wildly disputed line calls that make your game yours.</p></div>
       </section>
@@ -198,13 +193,13 @@ export default function Home() {
       </section>
 
       <section className="quote-strip">
-        <div className="quote-photo" role="img" aria-label="Friends reviewing a match on a pickleball court" />
+        <div className="court-panel" aria-hidden="true"><span /><span /><i /></div>
         <blockquote data-reveal>“Wait, what was<br />the score?”<span>Never again.</span></blockquote>
       </section>
 
       <section className="final-cta" id="join">
         <div className="final-orbit" aria-hidden="true"><span>JOIN THE CREW · JOIN THE CREW · </span></div>
-        <div data-reveal><p className="eyebrow">First serve is yours</p><h2>Bring your crew.<br /><em>We&apos;ll keep score.</em></h2><p>Join the private beta and be first on the court.</p></div>
+        <div data-reveal><h2>Bring your crew.<br /><em>We&apos;ll keep score.</em></h2><p>Join the private beta and be first on the court.</p></div>
         <div data-reveal><WaitlistForm dark={false} /></div>
       </section>
 

@@ -17,9 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "pickleball.ai — Every match has a story",
     description: "Log matches with friends, track your game, and keep your pickleball crew connected.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "pickleball.ai — Every match has a story." }],
   },
-  twitter: { card: "summary_large_image", images: ["/og.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
