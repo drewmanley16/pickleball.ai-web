@@ -107,6 +107,18 @@ function AppScreen({ active }: { active: number }) {
   </div>;
 }
 
+function HeroPhone({ active, className }: { active: number; className: string }) {
+  return <div className={`hero-phone ${className}`}>
+    <div className="hero-phone-screen">
+      <div className="dynamic-island" />
+      <div className="phone-status"><span>9:41</span><span>▮▮　◒　▰</span></div>
+      <AppScreen active={active} />
+      <div className="app-tabs"><span className={active===0?"selected":""}>⌂<small>Home</small></span><span className={active===1?"selected":""}>◎<small>Workout</small></span><span className={active===2?"selected":""}>●<small>Profile</small></span></div>
+      <div className="home-indicator" />
+    </div>
+  </div>;
+}
+
 function ScrollStory() {
   const [active, setActive] = useState(0);
   const section = useRef<HTMLElement>(null);
@@ -169,7 +181,17 @@ export default function Home() {
         <div className="hero-content">
           <h1><span>Every match</span><span>has a <em>story.</em></span></h1>
           <p className="hero-copy">Log the score. Tag your crew. Track the rivalries that keep you coming back.</p>
-          <WaitlistForm />
+          <div className="hero-actions">
+            <a className="app-store-link" href="https://apps.apple.com/" target="_blank" rel="noreferrer" aria-label="Download pickleball.ai on the App Store">
+              <span className="apple-mark" aria-hidden="true"></span><span><small>Download on the</small><strong>App Store</strong></span>
+            </a>
+            <a className="early-access-link" href="#join">Join early access <span>↘</span></a>
+          </div>
+        </div>
+        <div className="hero-app-preview" aria-label="Preview of the pickleball.ai app">
+          <HeroPhone active={0} className="hero-phone-left" />
+          <HeroPhone active={1} className="hero-phone-center" />
+          <HeroPhone active={2} className="hero-phone-right" />
         </div>
       </section>
 
