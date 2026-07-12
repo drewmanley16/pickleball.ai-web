@@ -195,12 +195,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="ticker" id="ticker" aria-label="Match activity">
-        <div className="ticker-track">
-          {[0, 1].map((copy) => <div className="ticker-set" key={copy} aria-hidden={copy === 1}><span>DREW &amp; WILL WON 11–8</span><b>●</b><span>REMATCH FRIDAY</span><b>●</b><span>8 MATCHES THIS WEEK</span><b>●</b><span>RIVERSIDE CREW</span><b>●</b></div>)}
-        </div>
-      </section>
-
       <section className="manifesto">
         <h2 data-reveal>Pickleball is better<br />when it&apos;s <em>personal.</em></h2>
         <div className="manifesto-grid"><p data-reveal>Not another stat sheet. A living record of the people, places, wins, and wildly disputed line calls that make your game yours.</p></div>
