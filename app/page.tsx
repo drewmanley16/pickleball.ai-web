@@ -81,55 +81,80 @@ function WaitlistForm({ dark = true }: { dark?: boolean }) {
   );
 }
 
-function ProductCarousel() {
+function AppScreen({ active }: { active: number }) {
+  if (active === 0) {
+    return <div className="ios-screen" key="home">
+      <div className="ios-header"><b>Home⌄</b><span>⌕　♢</span></div>
+      <div className="ios-feed-card"><div className="ios-person"><i>DM</i><div><b>Drew Manley</b><small>@drewbydoo · 2h</small></div></div><h4>Saturday crew session</h4><div className="ios-chips"><span>Third-shot drops</span><span>90 min</span></div><p>Finally found the soft reset from transition.</p><div className="ios-actions">♡ 12　◯ 4　↗</div></div>
+      <div className="ios-feed-card"><div className="ios-person"><i>AK</i><div><b>Alex Kim</b><small>@alexk · 5h</small></div></div><h4>Riverside rematch</h4><div className="ios-chips"><span>Dinks</span><span>60 min</span></div><p>Friday cannot come soon enough.</p></div>
+    </div>;
+  }
+  if (active === 1) {
+    return <div className="ios-screen" key="workout">
+      <div className="ios-header"><b>Workout</b><span className="ios-plus">＋</span></div>
+      <div className="ios-log-card"><i>◉</i><div><b>Log a session</b><small>Track today&apos;s play and share it</small></div><span>›</span></div>
+      <h5>YOUR SESSIONS</h5>
+      <div className="ios-session"><i>PB</i><div><b>Saturday crew session</b><small>90 min · Riverside Courts</small></div><span>2h</span></div>
+      <div className="ios-session"><i>PB</i><div><b>Kitchen work</b><small>45 min · Eastside Club</small></div><span>2d</span></div>
+      <div className="ios-session"><i>PB</i><div><b>Friday rematch</b><small>75 min · Riverside Courts</small></div><span>5d</span></div>
+    </div>;
+  }
+  return <div className="ios-screen" key="profile">
+    <div className="ios-header"><b>drewbydoo</b><span>↗　⚙</span></div>
+    <div className="ios-profile-row"><i>DM</i><div><small>Sessions</small><b>8</b></div><div><small>Followers</small><b>24</b></div><div><small>Following</small><b>18</b></div></div>
+    <div className="ios-activity"><div><b>3.5</b><small> hours this week</small></div><div className="ios-bars"><i/><i/><i/><i/><i/><i/><i/><i/></div><div className="ios-toggle"><b>Duration</b><span>Sessions</span></div></div>
+    <h5>DASHBOARD</h5><div className="ios-dashboard"><span>↗ Statistics</span><span>▣ Gear</span><span>♙ Measures</span></div>
+  </div>;
+}
+
+function ScrollStory() {
   const [active, setActive] = useState(0);
-  const touchStart = useRef<number | null>(null);
+  const section = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const interval = window.setInterval(() => setActive((current) => (current + 1) % stories.length), 4800);
-    return () => window.clearInterval(interval);
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      if (!section.current) return;
+      const rect = section.current.getBoundingClientRect();
+      const distance = rect.height - window.innerHeight;
+      const progress = Math.max(0, Math.min(0.999, -rect.top / distance));
+      setActive(Math.min(2, Math.floor(progress * 3)));
+    };
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
+    update(); window.addEventListener("scroll", onScroll, { passive: true }); window.addEventListener("resize", onScroll);
+    return () => { window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onScroll); if (frame) cancelAnimationFrame(frame); };
   }, []);
 
-  const move = (direction: number) => setActive((current) => (current + direction + stories.length) % stories.length);
-  const story = stories[active];
-
   return (
-    <div className="carousel-shell" onTouchStart={(e) => { touchStart.current = e.touches[0].clientX; }} onTouchEnd={(e) => {
-      if (touchStart.current === null) return;
-      const distance = e.changedTouches[0].clientX - touchStart.current;
-      if (Math.abs(distance) > 45) move(distance > 0 ? -1 : 1);
-      touchStart.current = null;
-    }}>
+    <section ref={section} className="scroll-story">
+      <div className="scroll-story-sticky">
       <div className="phone-stage">
         <div className="phone-glow" />
-        <div className="phone">
-          <div className="phone-status"><span>9:41</span><span>●●●</span></div>
-          <div className="app-head"><strong>{active === 0 ? "Home" : active === 1 ? "Rivalries" : "Profile"}</strong><span className="app-avatar">DM</span></div>
-          <div className="story-screen" key={active}>
-            <span className="story-accent">{story.accent}</span>
-            <p>{story.title}</p>
-            <strong>{story.score}</strong>
-            <h3>{story.kicker}</h3>
-            <small>{story.detail}</small>
-            <div className="mini-chart"><i /><i /><i /><i /><i /><i /><i /></div>
+        <div className="iphone-device">
+          <i className="side-button side-one"/><i className="side-button side-two"/><i className="side-button side-three"/>
+          <div className="iphone-screen">
+            <div className="dynamic-island" />
+            <div className="phone-status"><span>9:41</span><span>▮▮　◒　▰</span></div>
+            <AppScreen active={active} />
+            <div className="app-tabs"><span className={active===0?"selected":""}>⌂<small>Home</small></span><span className={active===1?"selected":""}>◎<small>Workout</small></span><span className={active===2?"selected":""}>●<small>Profile</small></span></div>
+            <div className="home-indicator" />
           </div>
-          <div className="app-tabs"><span>Home</span><b>＋</b><span>Profile</span></div>
         </div>
       </div>
 
-      <div className="carousel-copy">
-        <p className="eyebrow">One app. Every match.</p>
-        <div className="slide-number">0{active + 1} <span>/ 03</span></div>
-        <h2>{story.title}<br /><em>with your crew.</em></h2>
-        <p>{active === 0 ? "Scores, partners, opponents, and courts. One shared record for everyone who played." : active === 1 ? "Head-to-head history turns friendly competition into the reason you book the next court." : "Sessions, trends, gear, and milestones make improvement feel visible without turning play into homework."}</p>
-        <div className="carousel-controls">
-          <button onClick={() => move(-1)} aria-label="Previous feature">←</button>
-          <div className="carousel-dots">{stories.map((_, index) => <button key={index} className={index === active ? "active" : ""} onClick={() => setActive(index)} aria-label={`Show feature ${index + 1}`} />)}</div>
-          <button onClick={() => move(1)} aria-label="Next feature">→</button>
+      <div className="scroll-story-copy">
+        <p className="eyebrow">The actual app</p>
+        <div className="story-progress"><strong>{active + 1}</strong><span>/ 3</span><div>{stories.map((_,index)=><i key={index} className={index<=active?"filled":""}/>)}</div></div>
+        <div className="story-copy-swap" key={active}>
+          <span>{active === 0 ? "HOME" : active === 1 ? "WORKOUT" : "PROFILE"}</span>
+          <h2>{active === 0 ? "Your crew, in one feed." : active === 1 ? "Log every session." : "See your game grow."}</h2>
+          <p>{active === 0 ? "Follow friends, celebrate their sessions, and keep every rematch in the same place." : active === 1 ? "Track duration, focus, location, and the one takeaway you want to remember next time." : "Activity, stats, gear, measures, and your full session history — all unmistakably yours."}</p>
         </div>
       </div>
-    </div>
+      <span className="keep-scrolling">Keep scrolling <b>↓</b></span>
+      </div>
+    </section>
   );
 }
 
@@ -149,7 +174,6 @@ export default function Home() {
           <WaitlistForm />
           <p className="form-note">Private beta for iPhone · No spam, ever</p>
         </div>
-        <div className="hero-badge"><span>63%</span><small>crew win rate</small></div>
         <a className="scroll-cue" href="#ticker"><span>Scroll to rally</span><b>↓</b></a>
       </section>
 
@@ -162,13 +186,10 @@ export default function Home() {
       <section className="manifesto">
         <p className="eyebrow" data-reveal>The group chat, upgraded.</p>
         <h2 data-reveal>Pickleball is better<br />when it&apos;s <em>personal.</em></h2>
-        <div className="manifesto-grid">
-          <p data-reveal>Not another stat sheet. A living record of the people, places, wins, and wildly disputed line calls that make your game yours.</p>
-          <div className="orbit" data-reveal aria-hidden="true"><span>PLAY</span><span>LOG</span><span>SHARE</span><i /></div>
-        </div>
+        <div className="manifesto-grid"><p data-reveal>Not another stat sheet. A living record of the people, places, wins, and wildly disputed line calls that make your game yours.</p></div>
       </section>
 
-      <section className="carousel-section" data-reveal><ProductCarousel /></section>
+      <ScrollStory />
 
       <section className="numbers">
         <div data-reveal><span>01</span><strong>One shared match</strong><p>No duplicate logging. Everyone leaves with the same score.</p></div>
