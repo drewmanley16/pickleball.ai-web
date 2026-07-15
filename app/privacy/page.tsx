@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: "How pickleball.ai collects and uses your information.",
 };
 
-const EFFECTIVE_DATE = "[PLACEHOLDER — set before launch]";
-const SUPPORT_EMAIL = "[PLACEHOLDER — support email]";
+const EFFECTIVE_DATE = "July 15, 2026";
+const SUPPORT_EMAIL = "drewmanley16@gmail.com";
 
 export default function PrivacyPage() {
   return (

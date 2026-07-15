@@ -219,7 +219,7 @@ export default function Home() {
         <div data-reveal><WaitlistForm dark={false} /></div>
       </section>
 
-      <footer><a className="wordmark" href="#top">pickleball<span>.ai</span></a><p>Made for matches that matter.</p><p>© 2026 pickleball.ai</p></footer>
+      <footer><a className="wordmark" href="#top">pickleball<span>.ai</span></a><p>Made for matches that matter.</p><p><a className="footer-legal-link" href="/terms">Terms</a> · <a className="footer-legal-link" href="/privacy">Privacy</a><br />© 2026 pickleball.ai</p></footer>
     </main>
   );
 }
