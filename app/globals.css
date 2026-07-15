@@ -86,3 +86,19 @@ footer { min-height:140px; display:grid; grid-template-columns:1fr 1fr 1fr; alig
 }
 @media(max-width:540px){.hero{min-height:970px}.hero-actions{align-items:stretch}.app-store-link,.early-access-link{height:58px}.hero-app-preview{width:430px;height:500px;bottom:5px}.hero-phone{height:455px}.hero-phone-left{left:18px;top:67px}.hero-phone-center{left:128px;top:12px}.hero-phone-right{right:12px;top:65px}.signup-form{grid-template-columns:1fr}.signup-form button{justify-content:space-between}.phone{width:100%;border-radius:44px}.carousel-copy h2{font-size:47px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.scroll-ball{display:none}[data-reveal]{opacity:1;transform:none}}
+
+/* Legal pages (Terms of Use, Privacy Policy) */
+.legal { min-height:100vh; background:var(--black); color:#fff; }
+.legal-nav { height:88px; display:flex; align-items:center; justify-content:space-between; padding:0 5vw; border-bottom:1px solid var(--line); }
+.legal-nav .wordmark { font-size:22px; font-weight:780; }
+.legal-back { font-size:13px; font-weight:700; color:rgba(255,255,255,.7); transition:color .2s; }
+.legal-back:hover { color:var(--acid); }
+.legal-body { width:min(760px,90vw); margin:0 auto; padding:64px 0 120px; }
+.legal-body h1 { margin:0 0 12px; font-size:clamp(40px,6vw,68px); line-height:.9; font-weight:780; }
+.legal-date { margin:0 0 44px; color:var(--gray); font-size:14px; }
+.legal-body h2 { margin:40px 0 12px; color:var(--acid); font-size:22px; font-weight:720; }
+.legal-body p { margin:0 0 16px; color:rgba(255,255,255,.72); font-size:16px; line-height:1.65; }
+.legal-body ul { margin:0 0 16px; padding-left:20px; }
+.legal-body li { margin:0 0 8px; color:rgba(255,255,255,.72); font-size:16px; line-height:1.6; }
+.legal-body a { color:var(--acid); text-decoration:underline; }
+.legal-note { margin:0 0 32px; padding:14px 16px; border:1px solid rgba(189,255,47,.4); border-radius:6px; background:rgba(189,255,47,.08); color:rgba(255,255,255,.8); font-size:14px; }
