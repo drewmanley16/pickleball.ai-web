@@ -12,11 +12,26 @@ export const metadata: Metadata = {
       : "http://localhost:3000"
   ),
   title: "pickleball.ai — Every match has a story",
-  description: "Log matches with friends, track your game, and keep your pickleball crew connected.",
+  description: "Log pickleball matches with your crew, track your win rate and rivalries, and keep every session in one place. Now in private beta on iOS.",
+  keywords: [
+    "pickleball app",
+    "pickleball score tracker",
+    "pickleball stats app",
+    "log pickleball matches",
+    "pickleball app for friends",
+    "track pickleball win rate",
+  ],
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   openGraph: {
+    type: "website",
+    siteName: "pickleball.ai",
     title: "pickleball.ai — Every match has a story",
-    description: "Log matches with friends, track your game, and keep your pickleball crew connected.",
+    description: "Log pickleball matches with your crew, track your win rate and rivalries, and keep every session in one place. Now in private beta on iOS.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "pickleball.ai — Every match has a story",
+    description: "Log pickleball matches with your crew and track the rivalries that keep you coming back. Private beta on iOS.",
   },
 };
 
