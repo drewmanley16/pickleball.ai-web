@@ -277,7 +277,6 @@ export default function Home() {
         <nav className="nav"><a className="wordmark" href="#top">pickleball<span>.ai</span></a><a className="nav-cta" href="#join">Join the beta <span>↗</span></a></nav>
         <div className="hero-lines" aria-hidden="true"><i /><i /><i /></div>
         <div className="hero-content">
-          <span className="hero-eyebrow">Private beta · iOS</span>
           <h1><span>Every match</span><span>has a <em>story.</em></span></h1>
           <p className="hero-copy">The app for logging pickleball matches with your crew — scores, rivalries, and stats that actually mean something. Log a match in seconds; everyone leaves with the same record.</p>
           <WaitlistForm />
