@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { LegalShell } from "../legal-shell";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — pickleball.ai",
-  description: "How pickleball.ai collects and uses your information.",
+  title: "Privacy Policy — piclr",
+  description: "How piclr collects and uses your information.",
 };
 
 const EFFECTIVE_DATE = "July 15, 2026";
@@ -13,7 +13,7 @@ export default function PrivacyPage() {
   return (
     <LegalShell title="Privacy Policy" effectiveDate={EFFECTIVE_DATE}>
       <p>
-        This Privacy Policy explains what pickleball.ai (&quot;we&quot;, &quot;us&quot;) collects and how we use it.
+        This Privacy Policy explains what piclr (&quot;we&quot;, &quot;us&quot;) collects and how we use it.
         By using the App you agree to this policy.
       </p>
 

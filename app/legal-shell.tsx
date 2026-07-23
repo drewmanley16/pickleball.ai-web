@@ -20,7 +20,7 @@ export function LegalShell({
     <main className="legal">
       <nav className="legal-nav">
         <Link href="/" className="wordmark">
-          pickleball<span>.ai</span>
+          picl<span>r</span>
         </Link>
         <Link href="/" className="legal-back">
           ← Back

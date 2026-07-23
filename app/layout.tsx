@@ -11,7 +11,7 @@ export const metadata: Metadata = {
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : "http://localhost:3000"
   ),
-  title: "pickleball.ai — Every match has a story",
+  title: "piclr — Every match has a story",
   description: "Log pickleball matches with your crew, track your win rate and rivalries, and keep every session in one place. Now in private beta on iOS.",
   keywords: [
     "pickleball app",
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   openGraph: {
     type: "website",
-    siteName: "pickleball.ai",
-    title: "pickleball.ai — Every match has a story",
+    siteName: "piclr",
+    title: "piclr — Every match has a story",
     description: "Log pickleball matches with your crew, track your win rate and rivalries, and keep every session in one place. Now in private beta on iOS.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "pickleball.ai — Every match has a story",
+    title: "piclr — Every match has a story",
     description: "Log pickleball matches with your crew and track the rivalries that keep you coming back. Private beta on iOS.",
   },
 };

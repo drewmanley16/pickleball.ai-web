@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { LegalShell } from "../legal-shell";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — pickleball.ai",
-  description: "The terms that govern your use of pickleball.ai.",
+  title: "Terms of Use — piclr",
+  description: "The terms that govern your use of piclr.",
 };
 
 const EFFECTIVE_DATE = "July 15, 2026";
@@ -13,8 +13,8 @@ export default function TermsPage() {
   return (
     <LegalShell title="Terms of Use" effectiveDate={EFFECTIVE_DATE}>
       <p>
-        Welcome to pickleball.ai (&quot;the App&quot;). These Terms of Use (&quot;Terms&quot;) are a legal
-        agreement between you and pickleball.ai (&quot;we&quot;, &quot;us&quot;). By creating an account or using
+        Welcome to piclr (&quot;the App&quot;). These Terms of Use (&quot;Terms&quot;) are a legal
+        agreement between you and piclr (&quot;we&quot;, &quot;us&quot;). By creating an account or using
         the App, you agree to these Terms. If you do not agree, do not use the App.
       </p>
 
