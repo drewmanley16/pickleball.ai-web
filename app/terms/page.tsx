@@ -53,34 +53,47 @@ export default function TermsPage() {
         any time.
       </p>
 
-      <h2>5. Termination</h2>
+      <h2>5. Subscriptions (piclr Pro)</h2>
+      <p>
+        piclr Pro is an auto-renewing subscription offered in monthly and annual terms, billed through
+        your Apple ID at the price shown on the purchase screen at the time you subscribe. Payment is
+        charged to your Apple ID account at confirmation of purchase. Your subscription automatically
+        renews for the same term unless you turn off auto-renew at least 24 hours before the end of the
+        current period; your account will be charged for renewal within 24 hours prior to the end of the
+        current period. You can manage or cancel your subscription any time in iOS Settings → [your
+        name] → Subscriptions, or from Settings → Manage Subscription in the App. Any unused portion of
+        a free trial period, if offered, is forfeited when you purchase a subscription. Refunds are
+        handled by Apple in accordance with the App Store&apos;s refund policies, not by us.
+      </p>
+
+      <h2>6. Termination</h2>
       <p>
         We may suspend or terminate your access to the App at any time if you violate these Terms. You
         may stop using the App at any time and can permanently delete your account from Settings →
         Account.
       </p>
 
-      <h2>6. Disclaimers</h2>
+      <h2>7. Disclaimers</h2>
       <p>
         The App is provided &quot;as is&quot; and &quot;as available,&quot; without warranties of any kind. We do not
         guarantee that the App will be uninterrupted, secure, or error-free.
       </p>
 
-      <h2>7. Limitation of liability</h2>
+      <h2>8. Limitation of liability</h2>
       <p>
         To the fullest extent permitted by law, we will not be liable for any indirect, incidental,
         special, consequential, or punitive damages, or any loss of data, arising from your use of the
         App.
       </p>
 
-      <h2>8. Changes to these Terms</h2>
+      <h2>9. Changes to these Terms</h2>
       <p>
         We may update these Terms from time to time. If we make material changes, we will notify you
         within the App or by other reasonable means. Continued use after changes take effect means you
         accept the updated Terms.
       </p>
 
-      <h2>9. Apple App Store</h2>
+      <h2>10. Apple App Store</h2>
       <p>
         These Terms are between you and us, not Apple. Apple is not responsible for the App or its
         content. Apple and its subsidiaries are third-party beneficiaries of these Terms and may
@@ -88,7 +101,7 @@ export default function TermsPage() {
         App.
       </p>
 
-      <h2>10. Contact</h2>
+      <h2>11. Contact</h2>
       <p>Questions about these Terms? Contact us at {SUPPORT_EMAIL}.</p>
     </LegalShell>
   );

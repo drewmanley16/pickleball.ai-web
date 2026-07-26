@@ -39,22 +39,44 @@ export default function PrivacyPage() {
           <strong>Device tokens</strong> — if you enable notifications, we store a push token to
           deliver them.
         </li>
-        <li>Basic usage/diagnostic data needed to operate the service.</li>
+        <li>
+          <strong>Apple Watch workout metrics</strong> — if you enable Watch metric sharing, your
+          latest rounded heart rate and active-calorie total are relayed temporarily to the open
+          iPhone app. We store average and maximum heart rate and active calories with the session you
+          post. Raw heart-rate samples remain in Apple Health, and live readings are not stored or
+          uploaded.
+        </li>
+        <li>
+          <strong>Subscription status</strong> — if you subscribe to Pro, our payment provider
+          (RevenueCat, on top of Apple&apos;s in-app purchase system) shares your subscription status
+          and renewal dates with us. We never see or store your payment card details — Apple handles
+          those directly.
+        </li>
+        <li>
+          <strong>Analytics/usage data</strong> — we use PostHog to understand how the App is used
+          (e.g. which features are opened, how often you post). This is tied to an internal user
+          identifier and a few profile attributes (skill level, whether you have a DUPR rating, Pro
+          status) so we can improve the App. It is not shared with advertisers and is not used to track
+          you across other companies&apos; apps or websites.
+        </li>
+        <li>Basic diagnostic data needed to operate the service.</li>
       </ul>
 
       <h2>2. How we use information</h2>
       <p>
         We use your information to operate the App: to authenticate you, show your feed and profile,
-        deliver notifications, enable social features (follows, comments, contact matching), and to
-        keep the community safe (handling reports, blocks, and abuse).
+        record workouts, display Watch workout summaries on sessions you choose to post, deliver
+        notifications, enable social features (follows, comments, contact matching), manage your
+        subscription, understand feature usage, and to keep the community safe (handling reports,
+        blocks, and abuse). Health and fitness data is never used for advertising or analytics.
       </p>
 
       <h2>3. How information is shared</h2>
       <p>
         We share information with service providers who help us run the App, including our backend host
-        (Supabase), our SMS provider (Twilio, to send your login code), and Apple Push Notification
-        service (to deliver notifications). We do not sell your personal information. We may disclose
-        information if required by law.
+        (Supabase), our SMS provider (Twilio, to send your login code), Apple Push Notification service
+        (to deliver notifications), RevenueCat (to manage subscriptions), and PostHog (analytics). We do
+        not sell your personal information. We may disclose information if required by law.
       </p>
 
       <h2>4. Data retention and deletion</h2>
@@ -65,8 +87,10 @@ export default function PrivacyPage() {
 
       <h2>5. Your choices</h2>
       <p>
-        You control your profile information, whether to grant Contacts and Notifications permissions,
-        and can block or report other users at any time.
+        You control your profile information, whether to grant Contacts, Notifications, and Health
+        permissions, and whether future public sessions include Apple Watch metrics. You can change
+        Watch metric sharing in Settings → Preferences and manage Health access in system Settings. You
+        can block or report other users at any time.
       </p>
 
       <h2>6. Children</h2>
